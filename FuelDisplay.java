@@ -7,19 +7,23 @@ import java.awt.event.*;
 public class FuelDisplay extends JPanel {
     private static final long serialVersionUID = 42l;
 
-    /* TODO create GUI elements to display fuel state
-            and related information
-    */
+    /* Create GUI elements to display fuel state
+    and related information
+     */
+    JTextField fuel; 
 
     public FuelDisplay() {
-        /* TODO apply layout manager,
-                add GUI elements to Panel,
-        */
+        /*
+         * Apply layout for the GUI
+         */
+        super( new FlowLayout( FlowLayout.LEFT, 5, 3));
+        add(new JLabel("Fuel:"));
+        fuel = new JTextField(5);
+        add(this.fuel);
     }
 
     public void setFuel(float percent) {
-        /* TODO update display with new fuel
-                quantity value
-        */
+        //Update display of fuel with the value retrieve  
+        fuel.setText(Float.toString(percent));
     }
 }
